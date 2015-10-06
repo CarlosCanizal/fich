@@ -13,6 +13,8 @@
   "license": "MIT",
   "dependencies": {
     "angular": "~1.4.7",
-    "restangular": "~1.5.1"
+    "restangular": "~1.5.1",
+    "angular-resource": "~1.4.7",
+    "angular-ui-router": "~0.2.15"
   }
 }
