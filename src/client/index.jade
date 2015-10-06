@@ -1,0 +1,65 @@
+doctype html
+html(data-ng-app="app")
+  head
+    base(href="/")
+    title
+      |Bask
+    meta(name="viewport", content="width=device-width,initial-scale=1")
+    meta(charset="utf-8")
+    //build:css
+    //- link(rel="stylesheet", href="bower_components/pure/pure-min.css")
+    //- link(rel="stylesheet", href="bower_components/pure/grids-responsive-min.css")
+    //- link(rel="stylesheet", href="common/styles/main.css")
+    //- link(rel="stylesheet", href="common/styles/footer.css")
+    //- link(rel="stylesheet", href="common/styles/loading.css")
+    //- link(rel="stylesheet", href="bower_components/components-font-awesome/css/font-awesome.min.css")
+    //endbuild
+
+    //- link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Bitter')
+    //- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
+  body
+    h1
+      |Listo!
+    // clear:js
+    script(src="bower_components/angular/angular.min.js")
+    //- script(src="bower_components/angular-sanitize/angular-sanitize.min.js")
+    //- script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
+    //- script(src="bower_components/angular-resource/angular-resource.min.js")
+    //- script(src="bower_components/angular-animate/angular-animate.min.js")
+    //- script(src="bower_components/lodash/lodash.min.js")
+    //- script(src="bower_components/restangular/dist/restangular.min.js")
+    //- script(src="bower_components/angular-local-storage/dist/angular-local-storage.min.js")
+    //- script(src="bower_components/ng-file-upload/ng-file-upload.min.js")
+    //- script(src="bower_components/jquery/dist/jquery.min.js")
+    //- script(src="bower_components/moment/min/moment.min.js")
+
+    //- script(src="common/js/conekta.js")
+    //- script(src="common/js/parse.js")
+    
+    //- script(src="app/app.module.js")
+    //- script(src="app/initialize.js")
+    //- script(src="app/core/core.module.js")
+    //- script(src="app/core/config.js")
+
+
+
+    // endinject
+
+
+    script.
+      // inject-angular-loader:js //
+      //
+    script(src="/bower_components/angular-loader/angular-loader.js")
+    script.
+      // endinject //
+      // inject-script:js //
+    script(src="/bower_components/script.js/dist/script.js")
+    script.
+      // endinject //
+      $script([
+        // inject:js //
+        // endinject //
+      ], 
+      function() {
+        //angular.bootstrap(document, ['app']);
+      });

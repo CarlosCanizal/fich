@@ -9,9 +9,10 @@
   "moduleType": [
     "node"
   ],
-  "keywords": [
-  ],
+  "keywords": [],
   "license": "MIT",
   "dependencies": {
+    "angular": "~1.4.7",
+    "restangular": "~1.5.1"
   }
 }
