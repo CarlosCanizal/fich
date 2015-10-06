@@ -1,0 +1,17 @@
+{
+  "name": "the-crud-project",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "Carlos Canizal <carlos@codecery.com>"
+  ],
+  "description": "CRUD Angular Template",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}
