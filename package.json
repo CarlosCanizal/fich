@@ -1,0 +1,11 @@
+{
+  "name": "the-crud-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "bower": "^1.5.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
+  "engines": {}
+}
