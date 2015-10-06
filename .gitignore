@@ -1,0 +1,9 @@
+.DS_Store
+*.log
+.divshot-cache
+.divshot-cache/*
+node_modules
+src/client/bower_components
+dist
+src/client/**/*.html
+src/client/**/*.css
