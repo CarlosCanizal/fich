@@ -30,16 +30,11 @@
         name : "Carlos Canizal",
         rfc  : "CAZC850923B18"
       }
-    }
+    }    
 
-
-
-
-    
-    
+    var Client = parse.endpoint(parseClass, clientId);
 
     client.update  = function(){
-      var Client = parse.endpoint(parseClass, clientId);
       Client.update(client.info).then(function(result){
         if(!clientId)
           $state.go('client',{objectId:result.objectId});
@@ -48,6 +43,10 @@
       },function(error){
         console.log(error);
       })
+    }
+
+    client.delete = function(){
+      Client.remove();
     }
 
 
