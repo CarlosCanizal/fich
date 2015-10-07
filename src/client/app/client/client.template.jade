@@ -1,2 +1,23 @@
 h1
-  |Client
+  |FORM
+form(class="pure-form pure-form-aligned")
+  fieldset
+    div(class="pure-control-group")
+      label(for="name")
+        |Username
+      input(id="name",type="text",placeholder="Username")
+      div(class="pure-control-group")
+        label(for="password")
+          |Password
+        input(id="password",type="password",placeholder="Password")
+      div(class="pure-control-group")
+        label(for="email")
+          |Email Address
+        input(id="email",type="email",placeholder="Email Address")
+      div(class="pure-control-group")
+        label(for="foo")
+          |Supercalifragilistic Label
+        input(id="foo",type="text",placeholder="Enter something here...")
+      div(class="pure-controls")
+        button(type="submit",class="pure-button pure-button-primary")
+          |Submit
