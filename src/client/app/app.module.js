@@ -5,7 +5,7 @@
     'ngResource',
     // 'ngAnimate',
     // 'ngFileUpload',
-    // 'restangular',
+    'restangular',
     'app.core',
     // 'app.storage',
     // 'app.layout'

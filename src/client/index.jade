@@ -18,15 +18,14 @@ html(data-ng-app="app")
     //- link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Bitter')
     //- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
   body
-    h1
-      |Listo!
+    ui-view
     // clear:js
     script(src="bower_components/angular/angular.js")
     //- script(src="bower_components/angular-sanitize/angular-sanitize.min.js")
     script(src="bower_components/angular-ui-router/release/angular-ui-router.min.js")
     script(src="bower_components/angular-resource/angular-resource.min.js")
     //- script(src="bower_components/angular-animate/angular-animate.min.js")
-    //- script(src="bower_components/lodash/lodash.min.js")
+    script(src="bower_components/lodash/lodash.min.js")
     script(src="bower_components/restangular/dist/restangular.min.js")
     //- script(src="bower_components/angular-local-storage/dist/angular-local-storage.min.js")
     //- script(src="bower_components/ng-file-upload/ng-file-upload.min.js")
@@ -40,6 +39,13 @@ html(data-ng-app="app")
     script(src="app/initialize.js")
     script(src="app/core/core.module.js")
     script(src="app/core/config.js")
+
+    //Factories
+    script(src="app/core/parse/parse.factory.js")
+    script(src="app/core/parse/development.headers.factory.js")
+
+    //Controllers
+    script(src="app/client/client.controller.js")
 
 
 

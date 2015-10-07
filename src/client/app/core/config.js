@@ -9,8 +9,10 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
   // $locationProvider.html5Mode(true);
   
   $stateProvider
-    .state('index',{
-      url:'/'
+    .state('client',{
+      url:'/',
+      controller: 'Client',
+      controllerAs: 'client'
     });
       
   $urlRouterProvider.otherwise('/');
