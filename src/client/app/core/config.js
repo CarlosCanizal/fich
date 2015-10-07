@@ -27,6 +27,24 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Client',
       controllerAs: 'client'
     })
+    .state('services',{
+      url:'/services',
+      templateUrl : 'app/service/services.template.html',
+      controller: 'Services',
+      controllerAs: 'services'
+    })
+    .state('newService',{
+      url:'/services/new',
+      templateUrl : 'app/service/service.template.html',
+      controller: 'Service',
+      controllerAs: 'service'
+    })
+    .state('service',{
+      url:'/services/:objectId',
+      templateUrl : 'app/service/service.template.html',
+      controller: 'Service',
+      controllerAs: 'service'
+    })
       
   $urlRouterProvider.otherwise('/client');
 }

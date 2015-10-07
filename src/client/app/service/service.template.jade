@@ -1,0 +1,24 @@
+a(ui-sref="services")
+  |Regresar
+h1
+  |FORM
+form(class="pure-form pure-form-aligned", data-ng-submit="service.update()")
+  fieldset
+    div(class="pure-control-group")
+      label(for="name")
+        |Nombre
+      input(id="name",type="text",placeholder="Nombre del Cliente", data-ng-model="service.info.name")
+    div(class="pure-control-group")
+      label(for="description")
+        |Desc
+      input(id="description",type="text",placeholder="RFC", data-ng-model="service.info.description")
+    div(class="pure-control-group")
+      label(for="price")
+        |Price
+      input(id="price",type="text",placeholder="Precio", data-ng-model="service.info.price")
+    div(class="pure-controls")
+      button(type="submit",class="pure-button pure-button-primary")
+        |Submit
+
+button(data-ng-click="service.delete()")
+  |Borrar
