@@ -10,12 +10,23 @@
   function Client($scope, parse) {
     var shell = $scope.shell;
     var client =  this;
-    var Client = parse.endpoint('Client');
-    Client.getAll({objectId:'S7ClFU2Gh8'}).then(function(result){
-      console.log(result);
-    },function(error){
-      console.log(error);
-    });
+    var clientId = null;
+    var parseClass = "Client";
+
+    client.info = {
+      name : "Carlos Canizal",
+      rfc  : "CAZC850923B18" 
+    }
+
+    client.update  = function(){
+      var Client = parse.endpoint(parseClass, clientId);
+      Client.update(client.info).then(function(result){
+        console.log(result);
+      },function(error){
+        console.log(error);
+      })
+    }
+
 
   }
 })();
