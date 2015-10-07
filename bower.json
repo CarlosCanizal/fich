@@ -16,6 +16,7 @@
     "restangular": "~1.5.1",
     "angular-resource": "~1.4.7",
     "angular-ui-router": "~0.2.15",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "pure": "~0.6.0"
   }
 }

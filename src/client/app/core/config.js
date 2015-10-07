@@ -10,10 +10,11 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
   
   $stateProvider
     .state('client',{
-      url:'/',
+      url:'/client',
+      templateUrl : 'app/client/client.template.html',
       controller: 'Client',
       controllerAs: 'client'
     });
       
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/client');
 }
