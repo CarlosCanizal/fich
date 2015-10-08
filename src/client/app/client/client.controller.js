@@ -34,7 +34,8 @@
       client.info = {
         name : "Carlos Canizal",
         rfc  : "CAZC850923B18",
-        services: []
+        services: [],
+        contacts: []
       }
     }    
 
@@ -61,6 +62,14 @@
 
     client.removeService = function(index){
       client.info.services.splice(index, 1);
+    }
+
+    client.addContact = function(){
+     client.info.contacts.push(client.contact);
+    }
+
+    client.removeContact = function(index){
+      client.info.contacts.splice(index, 1);
     }
 
 

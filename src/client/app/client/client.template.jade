@@ -2,7 +2,7 @@ a(ui-sref="clients")
   |Regresar
 h1
   |FORM
-form(class="pure-form pure-form-aligned", data-ng-submit="client.update()")
+form(class="pure-form pure-form-aligned")
   fieldset
     div(class="pure-control-group")
       label(for="name")
@@ -12,21 +12,24 @@ form(class="pure-form pure-form-aligned", data-ng-submit="client.update()")
       label(for="RFC")
         |RFC
       input(id="rfc",type="text",placeholder="RFC", data-ng-model="client.info.rfc")
-    div(class="pure-control-group")
-      label(for="RFC")
-        |Agregar Servicios
-      select(ng-options="item.name for item in client.services" ng-model="client.service")
-      a(data-ng-click="client.addService()")
-        |Agregar 
-      ul
-        li(data-ng-repeat="item in client.info.services track by item.objectId")
-          |{{item.name}}
-          a(data-ng-click="client.removeService($index)")
-            |Eliminar
 
+h1
+  |Servicios
+div(class="pure-control-group")
+  label(for="RFC")
+    |Agregar Servicios
+  select(ng-options="item.name for item in client.services" ng-model="client.service")
+  a(data-ng-click="client.addService()")
+    |Agregar 
+  ul
+    li(data-ng-repeat="item in client.info.services track by item.objectId")
+      |{{item.name}}
+      a(data-ng-click="client.removeService($index)")
+        |Eliminar
+div(data-ng-include="'app/contact/contact.template.html'")
 
-    div(class="pure-controls")
-      button(type="submit",class="pure-button pure-button-primary")
-        |Submit
+div(class="pure-controls")
+  button(,class="pure-button pure-button-primary", data-ng-click="client.update()")
+    |Guardar
 button(data-ng-click="client.delete()")
   |Borrar
