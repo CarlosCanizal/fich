@@ -1,16 +1,27 @@
-table
-  tr
-    th
-      |Nombre
-    th
-      |RFC
-    th
-      |Accciones
-  tr(data-ng-repeat="item in clients.list")
-    td
-      |{{item.name}}
-    td
-      |{{item.rfc}}
-    td
-      a( ui-sref="client({objectId:item.objectId})" )
-        |editar
+.content
+  .title
+    span
+      |Clientes
+  .content-box
+    .menu-bar
+      .align-right
+        a(ui-sref="newClient")
+          |Agregar Nuevo
+    table.pure-table.pure-table-horizontal
+      thead
+        tr
+          th
+            |Nombre
+          th
+            |RFC
+          th
+            |Accciones
+      tbody
+        tr(data-ng-repeat="item in clients.list")
+          td
+            |{{item.name}}
+          td
+            |{{item.rfc}}
+          td
+            a( ui-sref="client({objectId:item.objectId})" )
+              |editar
