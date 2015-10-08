@@ -13,8 +13,6 @@
     var objectId = null;
     var parseClass = "Service";
 
-
-
     if($stateParams.objectId){
       objectId = $stateParams.objectId;
       console.log(objectId);

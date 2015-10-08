@@ -12,9 +12,21 @@ form(class="pure-form pure-form-aligned", data-ng-submit="client.update()")
       label(for="RFC")
         |RFC
       input(id="rfc",type="text",placeholder="RFC", data-ng-model="client.info.rfc")
+    div(class="pure-control-group")
+      label(for="RFC")
+        |Agregar Servicios
+      select(ng-options="item.name for item in client.services" ng-model="client.service")
+      a(data-ng-click="client.addService()")
+        |Agregar 
+      ul
+        li(data-ng-repeat="item in client.info.services track by item.objectId")
+          |{{item.name}}
+          a(data-ng-click="client.removeService($index)")
+            |Eliminar
+
+
     div(class="pure-controls")
       button(type="submit",class="pure-button pure-button-primary")
         |Submit
-
 button(data-ng-click="client.delete()")
   |Borrar
