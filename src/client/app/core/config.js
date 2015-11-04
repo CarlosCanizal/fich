@@ -51,6 +51,12 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Login',
       controllerAs: 'login'
     })
+    .state('register',{
+      url:'/register',
+      templateUrl : 'app/register/register.template.html',
+      controller: 'Register',
+      controllerAs: 'register'
+    })
       
   $urlRouterProvider.otherwise('/client');
 }

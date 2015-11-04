@@ -1,0 +1,23 @@
+{
+  "login":{
+    "email": "Correo Electronico",
+    "emailInvalid": "Correo Electronico invalido",
+    "password": "Contraseña",
+    "passwordInvalid": "Contraseña es requerida",
+    "login": "Iniciar Sesion"
+  },
+  "register":{
+    "name": "Nombre",
+    "nameRequired": "Nombre es requerido",
+    "lastname": "Apellido",
+    "lastnameRequired": "Apellido es requerido",
+    "email": "Correo Electronico",
+    "emailInvalid": "Correo Electronico invalido",
+    "password": "Contraseña",
+    "passwordInvalid": "Contraseña es requerida",
+    "passwordRequired": "Contraseña es requerida",
+    "passwordNotMatch": "Contraseña no coincide",
+    "passwordConfirm": "Confirma tu contraseña",
+    "register":"Registrarme"
+  }
+}

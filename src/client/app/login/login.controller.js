@@ -10,5 +10,7 @@
   function Login($scope, parse) {
     var shell = $scope.shell;
     var login =  this;
+
+    login.labels = shell.labels.login;
   }
 })();
