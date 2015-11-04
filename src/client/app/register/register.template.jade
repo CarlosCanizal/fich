@@ -2,24 +2,24 @@
   .row
     .col-xs-12.col-md-6.center-block
       .container-border.margin-top-2
-        form.pure-form.pure-form-stacked(name="registerForm", novalidate="")
+        form.pure-form.pure-form-stacked(name="registerForm", novalidate="", data-ng-submit="register.send()")
           .form-group
             label(for="name", ng-show="registerForm.name.$valid || registerForm.name.$pristine", data-ng-bind="register.labels.name")
             label.error(for="name", ng-show="registerForm.name.$invalid && registerForm.name.$dirty", data-ng-bind="register.labels.nameRequired")
-            input.form-control#name(name="name", data-ng-model="newUser.name", required="")
+            input.form-control#name(name="name", data-ng-model="register.data.name", required="")
           .form-group
             label(for="lastname", ng-show="registerForm.lastname.$valid || registerForm.lastname.$pristine", data-ng-bind="register.labels.lastname")
             label.error(for="lastname", ng-show="registerForm.lastname.$invalid && registerForm.lastname.$dirty", data-ng-bind="register.labels.lastnameRequired")
-            input.form-control#lastname(name="lastname", data-ng-model="newUser.lastname", required="")          
+            input.form-control#lastname(name="lastname", data-ng-model="register.data.lastname", required="")          
           .form-group
             label(for="username", ng-show="registerForm.username.$valid || registerForm.username.$pristine", data-ng-bind="register.labels.email")
             label.error(for="username", ng-show="registerForm.username.$invalid && registerForm.username.$dirty", data-ng-bind="register.labels.emailInvalid")
-            input.form-control#username(name="username", type="email", data-ng-model="newUser.username", required="")          
+            input.form-control#username(name="username", type="email", data-ng-model="register.data.username", required="")          
           .form-group
             label(for="password", ng-show="((registerForm.password.$valid || registerForm.password.$pristine) || (!registerForm.password.$error.required  && registerForm.password.$error.match && registerForm.confirmPassword.$pristine)) && !(registerForm.confirmPassword.$dirty && registerForm.password.$error.required)", data-ng-bind="register.labels.password")
             label.error(for="password", ng-show="registerForm.password.$error.required && (registerForm.password.$dirty || registerForm.confirmPassword.$dirty)", data-ng-bind="register.labels.passwordInvalid")
             label.error(for="password", ng-show="registerForm.confirmPassword.$dirty && !registerForm.password.$error.required && registerForm.password.$error.match && registerForm.password.$dirty", data-ng-bind="register.labels.passwordNotMatch")
-            input.form-control#password(name="password", type="password" data-ng-model="newUser.password", required="", password-match="passwordMatch")
+            input.form-control#password(name="password", type="password" data-ng-model="register.data.password", required="", password-match="passwordMatch")
           .form-group
             label(for="confirmPassword", ng-show="registerForm.confirmPassword.$valid || registerForm.confirmPassword.$pristine", data-ng-bind="register.labels.passwordConfirm")
             label.error(for="confirmPassword", ng-show="registerForm.confirmPassword.$error.required && registerForm.confirmPassword.$dirty", data-ng-bind="register.labels.passwordRequired")

@@ -7,6 +7,7 @@
     // 'ngFileUpload',
     'restangular',
     'app.core',
+    'app.storage'
     // 'app.storage',
     // 'app.layout'
   ]);

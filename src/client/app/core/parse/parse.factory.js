@@ -77,7 +77,7 @@
         setId : function(id){
           return initialize(className, id);
         },
-        remove: function(){
+        delete: function(){
           return restObject.one().remove();
         },
         getAll: function(where, order, limit){
