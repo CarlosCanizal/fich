@@ -5,14 +5,16 @@
   .module('app.core')
   .factory('parse', parse);
 
-  parse.$inject = ['$resource','$q', 'Restangular'];
+  parse.$inject = ['$q', 'Restangular'];
 
   /* @ngInject */
-  function parse($resource, $q, Restangular) {
+  function parse($q, Restangular) {
 
     var factory = {
-      cloud: cloud,
-      endpoint: endpoint
+      cloud     : cloud,
+      endpoint  : endpoint,
+      current   : current,
+      user      : user
     };
 
     return factory;
@@ -25,40 +27,83 @@
       return new ParseClass(className, id);
     }
 
+    function current(){
+      return Restangular.service('users/me');
+    }
+
+    function user(userId){
+      var user = 'users';
+      if(userId)
+        user = 'users/'+userId;
+      return Restangular.service(user);
+    }
+
     function ParseClass(className, id){ 
 
       var className = className;
       var id = id;
       var endpoint = null;
+      var classEndpoint = null;
       var restObject;
 
       initialize(className, id);
 
       function initialize(newClassName, newId){
         
-        className =  newClassName;
+
+        if(!newClassName){
+          console.error('invalid className');
+          return;
+        }
+
         id = newId;
-
+        className =  newClassName;
         endpoint = 'classes/'+className;
-        if(newId)
-          endpoint += '/'+newId;
+        classEndpoint = endpoint;
 
-        restObject = Restangular.service(endpoint);
+        if(newId){
+          endpoint += '/'+id;
+        }
+
+        restObject = Restangular.service(endpoint);        
       }
+
 
       function getObject(){
         return restObject.one().get();
       }
 
       return {
+        setId : function(id){
+          return initialize(className, id);
+        },
         remove: function(){
           return restObject.one().remove();
         },
-        getAll: function(params){
-          var where = null;
-          if(params)
-            where = {where:params};
-          return restObject.getList(where);
+        getAll: function(where, order, limit){
+          var  params= {};
+          if(where)
+            params.where = where;
+          if(order)
+            params.order = order;
+          if(limit)
+            params.limit = limit;
+
+          return restObject.getList(params);
+        },
+        getFirst : function(params){
+          var deferred = $q.defer();
+
+          this.getAll(params).then(function(items){
+            if(items.length > 0)
+              deferred.resolve(items[0]);
+            else
+              deferred.resolve(false);
+          },function(error){
+            deferred.reject(error);
+          });
+
+          return deferred.promise;
         },
         get: function(){
           return getObject();
