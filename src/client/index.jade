@@ -9,6 +9,7 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     //build:css
     link(rel="stylesheet", href="bower_components/bootstrap/dist/css/bootstrap.css")
     link(rel="stylesheet", href="common/styles/main.css")
+    link(rel="stylesheet", href="common/styles/loading.css")
     //- link(rel="stylesheet", href="common/styles/footer.css")
     //- link(rel="stylesheet", href="common/styles/loading.css")
     //- link(rel="stylesheet", href="bower_components/components-font-awesome/css/font-awesome.min.css")
@@ -18,6 +19,11 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     //- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
   body
     ui-view
+    .loading-layer(data-ng-show="shell.loading")
+      .spinner
+        .bounce1
+        .bounce2
+        .bounce3
     .alert-bar
       .alert.alert-danger(role="alert", data-ng-if="shell.errorMessage")
         button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.error = false")

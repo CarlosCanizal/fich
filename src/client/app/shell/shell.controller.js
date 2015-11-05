@@ -12,6 +12,8 @@
     // jshint validthis: true 
     var shell = this;
 
+    shell.loading = false;
+
     template.get('app/lang/es.json').then(function(labels){
       if(labels)
         shell.labels = labels;
@@ -22,6 +24,16 @@
       shell.loading = false;
 
     });
+
+
+
+    shell.startLoading = function(){
+      shell.loading = true;
+    }
+
+    shell.stopLoading = function(){
+      shell.loading = false;
+    }
 
     shell.setError =function(error){
       shell.errorMessage = error;
