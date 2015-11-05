@@ -26,16 +26,19 @@
       if($scope.registerForm.$valid){
         // shell.showLoading();
         userApi.register(register.data).then(function(user){
-          // $scope.setUser(user);
           console.log(user);
+          console.log(register.labels);
+          shell.setSuccess(register.labels.success);
+          // shell.setSuccess();
         },function(error){
           console.log(error);
-          // if(error.data.error){
+          if(error.data.error){
           //   $scope.response.register = error.data.error;
           //   $scope.response.code = error.data.code;
-          // }else{
-          //   shell.setError(error);
-          // }
+            shell.setError(error.data.error);
+          }else{
+            shell.setError(error);
+          }
         })
         // .finally(shell.hideLoading);
       }else{

@@ -14,7 +14,8 @@
       cloud     : cloud,
       endpoint  : endpoint,
       current   : current,
-      user      : user
+      user      : user,
+      login     : login
     };
 
     return factory;
@@ -25,6 +26,10 @@
 
     function endpoint(className, id){
       return new ParseClass(className, id);
+    }
+
+    function login(){
+      return Restangular.oneUrl('login');
     }
 
     function current(){

@@ -2,14 +2,14 @@
   .row
     .col-xs-12.col-md-6.center-block
       .container-border.margin-top-2
-        form.pure-form.pure-form-stacked(name="loginForm", novalidate="")
+        form.pure-form.pure-form-stacked(name="loginForm", novalidate="", data-ng-submit="login.send()")
           .form-group
             label(for="username", ng-show="loginForm.username.$valid || loginForm.username.$pristine", data-ng-bind="login.labels.email")
             label.error(for="username", ng-show="loginForm.username.$invalid && loginForm.username.$dirty", data-ng-bind="login.labels.emailInvalid")
-            input#username.form-control(name="username", type="email", data-ng-model="user.username", required="", autofocus)
+            input#username.form-control(name="username", type="email", data-ng-model="login.data.username", required="", autofocus)
           .form-group
             label(for="password", ng-show="loginForm.password.$valid || loginForm.password.$pristine", data-ng-bind="login.labels.password")
             label.error(for="password", ng-show="loginForm.password.$invalid && loginForm.password.$dirty", data-ng-bind="login.labels.passwordInvalid")
-            input#password.form-control(name="password", type="password", data-ng-model="user.password", required="")
+            input#password.form-control(name="password", type="password", data-ng-model="login.data.password", required="")
           .align-center
             button.btn.btn-default(type="Submit", data-ng-bind="login.labels.login")

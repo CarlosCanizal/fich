@@ -11,7 +11,8 @@
   function userApi($q, parse, storage ) {
 
     var factory = {
-      register: register
+      register : register,
+      login : login 
     };
 
     return factory;
@@ -25,6 +26,12 @@
         deferred.reject(error);
       });
       return deferred.promise
+    }
+
+
+    function login(params){
+      var Login = parse.login();
+      return Login.get(params);
     }
 
   }

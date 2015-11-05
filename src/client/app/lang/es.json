@@ -4,7 +4,8 @@
     "emailInvalid": "Correo Electronico invalido",
     "password": "Contraseña",
     "passwordInvalid": "Contraseña es requerida",
-    "login": "Iniciar Sesion"
+    "login": "Iniciar Sesion",
+    "success" : "¡Correcto! Vamos a tu dashboard"
   },
   "register":{
     "name": "Nombre",
@@ -18,6 +19,7 @@
     "passwordRequired": "Contraseña es requerida",
     "passwordNotMatch": "Contraseña no coincide",
     "passwordConfirm": "Confirma tu contraseña",
-    "register":"Registrarme"
+    "register":"Registrarme",
+    "success":"¡Bienvenido! Tu registro se complete con exito."
   }
 }

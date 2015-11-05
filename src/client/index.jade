@@ -18,6 +18,18 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     //- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
   body
     ui-view
+    .alert-bar
+      .alert.alert-danger(role="alert", data-ng-if="shell.errorMessage")
+        button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.error = false")
+          span(aria-hidden="true")
+            |&times;
+        |{{shell.errorMessage}}
+      .alert.alert-success(role="alert", data-ng-if="shell.successMessage")
+        button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.successMessage = false")
+          span(aria-hidden="true")
+            |&times;
+        |{{shell.successMessage}}
+
     // clear:js
     script(src="bower_components/angular/angular.js")
     //- script(src="bower_components/angular-sanitize/angular-sanitize.min.js")
@@ -46,6 +58,7 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     script(src="app/core/parse/parse.factory.js")
     script(src="app/core/parse/development.headers.factory.js")
     script(src="app/core/storage/storage.factory.js")
+    script(src="app/core/template/template.factory.js")
     script(src="app/core/user/user.api.js")
 
     //Controllers
@@ -58,7 +71,7 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     script(src="app/register/register.controller.js")
 
     //directives
-    script(src="app/login/passwordMatch.directive.js")
+    //- script(src="app/login/passwordMatch.directive.js")
 
 
 
