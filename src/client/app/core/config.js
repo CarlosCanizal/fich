@@ -57,6 +57,12 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controller: 'Register',
       controllerAs: 'register'
     })
+    .state('dashboard',{
+      url:'/dashboard',
+      templateUrl : 'app/dashboard/dashboard.template.html',
+      controller: 'Dashboard',
+      controllerAs: 'dashboard'
+    })
       
   $urlRouterProvider.otherwise('/client');
 }
