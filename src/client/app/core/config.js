@@ -64,5 +64,5 @@ function config($locationProvider,$urlRouterProvider, $stateProvider) {
       controllerAs: 'dashboard'
     })
       
-  $urlRouterProvider.otherwise('/client');
+  $urlRouterProvider.otherwise('/login');
 }

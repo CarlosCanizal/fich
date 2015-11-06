@@ -1,2 +1,13 @@
-h1
-  |Dashboard
+.container-fluid
+  .row
+    .col-xs-2
+      div(data-ng-include="'app/dashboard/sideMenu/sideMenu.template.html'")
+    .col-xs-10
+      .row
+        .col-xs-8.center-block
+          .margin-top-2
+            .panel.panel-primary
+              .panel-heading
+                |Titulo
+              .panel-body
+                |Content
