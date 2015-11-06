@@ -19,12 +19,15 @@
     }
 
     login.send = function(){
-      userApi.login(login.data).then(function(result){
-        console.log(result);
-        shell.setSuccess(login.labels.success);
-      },function(error){
-        shell.setError(error);
-      });
+      if($scope.loginForm.$valid){
+        shell.startLoading();
+        userApi.login(login.data).then(function(result){
+          console.log(result);
+          shell.setSuccess(login.labels.success);
+        },function(error){
+          shell.setError(error);
+        }).finally(shell.stopLoading);
+      }
     }
   }
 })();

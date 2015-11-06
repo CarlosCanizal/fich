@@ -18,12 +18,12 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     //- link(rel="stylesheet", href='https://fonts.googleapis.com/css?family=Bitter')
     //- link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans')
   body
-    ui-view
     .loading-layer(data-ng-show="shell.loading")
       .spinner
         .bounce1
         .bounce2
         .bounce3
+    ui-view
     .alert-bar
       .alert.alert-danger(role="alert", data-ng-if="shell.errorMessage")
         button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.error = false")

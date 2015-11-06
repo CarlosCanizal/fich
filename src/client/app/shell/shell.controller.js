@@ -21,7 +21,7 @@
       console.log(error);
       shell.setError(error);
     }).finally(function(){
-      shell.loading = false;
+      // shell.loading = false;
 
     });
 
