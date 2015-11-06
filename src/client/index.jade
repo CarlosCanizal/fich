@@ -26,7 +26,7 @@ html(data-ng-app="app", data-ng-controller="Shell as shell")
     ui-view
     .alert-bar
       .alert.alert-danger(role="alert", data-ng-if="shell.errorMessage")
-        button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.error = false")
+        button.close(type="button",data-dismiss="alert",aria-label="Close", data-ng-click="shell.errorMessage = false")
           span(aria-hidden="true")
             |&times;
         |{{shell.errorMessage}}
