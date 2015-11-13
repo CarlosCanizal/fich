@@ -5,17 +5,16 @@
   .module('app.core')
   .factory('parse', parse);
 
-  parse.$inject = ['$q', 'Restangular'];
+  parse.$inject = ['$resource','$q', 'Restangular'];
 
   /* @ngInject */
-  function parse($q, Restangular) {
+  function parse($resource, $q, Restangular) {
 
     var factory = {
       cloud     : cloud,
       endpoint  : endpoint,
       current   : current,
-      user      : user,
-      login     : login
+      user      : user
     };
 
     return factory;
@@ -26,10 +25,6 @@
 
     function endpoint(className, id){
       return new ParseClass(className, id);
-    }
-
-    function login(){
-      return Restangular.oneUrl('login');
     }
 
     function current(){
@@ -48,29 +43,21 @@
       var className = className;
       var id = id;
       var endpoint = null;
-      var classEndpoint = null;
       var restObject;
 
       initialize(className, id);
 
       function initialize(newClassName, newId){
         
-
-        if(!newClassName){
-          console.error('invalid className');
-          return;
-        }
-
-        id = newId;
         className =  newClassName;
+        id = newId;
+
         endpoint = 'classes/'+className;
-        classEndpoint = endpoint;
+        if(newId)
+          endpoint += '/'+newId;
 
-        if(newId){
-          endpoint += '/'+id;
-        }
-
-        restObject = Restangular.service(endpoint);        
+        restObject = Restangular.service(endpoint);
+        
       }
 
 
@@ -82,17 +69,17 @@
         setId : function(id){
           return initialize(className, id);
         },
-        delete: function(){
+        remove: function(){
           return restObject.one().remove();
         },
-        getAll: function(where, order, limit){
+        getAll: function(where, order, include){
           var  params= {};
           if(where)
             params.where = where;
           if(order)
             params.order = order;
-          if(limit)
-            params.limit = limit;
+          if(include)
+            params.include = include;
 
           return restObject.getList(params);
         },
